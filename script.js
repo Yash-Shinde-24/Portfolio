@@ -35,7 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Sticky Navigation
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 100) {
+        const heroSection = document.querySelector('#home');
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        
+        if (window.scrollY >= heroBottom) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');

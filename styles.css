@@ -553,6 +553,22 @@ section {
     align-items: flex-start;
 }
 
+/* Alternate timeline items left and right in desktop view */
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+    text-align: left;
+    padding-right: 0;
+    padding-left: 50px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 0;
+    margin-right: 30px;
+}
+
 .timeline-dot {
     position: absolute;
     left: 50%;
@@ -944,40 +960,18 @@ section {
     }
     
     /* Timeline Responsive */
-    .timeline::after {
-        left: 31px;
-    }
-
-    /* Only apply special padding to timeline containers */
-    .timeline .container {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-    }
-    
-    /* Reset normal container padding */
-    .container {
-        width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .container::before {
-        left: 60px;
-        border: medium solid #7853f4;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent #7853f4 transparent transparent;
-    }
-
-    .left, .right {
-        left: 0%;
-    }
-    
     .timeline::before {
         left: 30px;
+        transform: translateX(-50%);
+        top: 0;
+        height: 100%;
+        z-index: 1;
+        width: 4px;
+        position: absolute;
     }
     
-    .timeline-item {
+    .timeline-item,
+    .timeline-item:nth-child(even) {
         flex-direction: column;
         align-items: flex-start;
         margin-left: 30px;
@@ -986,9 +980,12 @@ section {
     .timeline-dot {
         left: 30px;
         transform: translateX(-50%);
+        margin-top: 0;
+        top: 0;
     }
     
-    .timeline-date {
+    .timeline-date,
+    .timeline-item:nth-child(even) .timeline-date {
         width: 100%;
         padding-right: 0;
         padding-left: 60px;
@@ -996,9 +993,11 @@ section {
         margin-bottom: 10px;
     }
     
-    .timeline-content {
+    .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
         width: 100%;
         margin-left: 0;
+        margin-right: 0;
         padding-left: 60px;
     }
     

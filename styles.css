@@ -1037,9 +1037,10 @@ section {
     .timeline-item:nth-child(even) {
         flex-direction: column;
         align-items: flex-start;
-        margin-left: 30px;
+        /* Removed margin-left: 30px; */
+        padding-left: 30px; /* Add padding to the item itself */
     }
-    
+
     .timeline-dot {
         left: 30px;
         transform: translateX(-50%);
@@ -1051,7 +1052,7 @@ section {
     .timeline-item:nth-child(even) .timeline-date {
         width: 100%;
         padding-right: 0;
-        padding-left: 60px;
+        padding-left: 30px; /* Adjusted padding */
         text-align: left;
         margin-bottom: 10px;
     }
@@ -1061,9 +1062,12 @@ section {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        padding-left: 60px;
-        padding: 20px;
+        padding-left: 30px; /* Adjusted padding */
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
         margin-bottom: 15px;
+        position: relative; /* Ensure content stays within bounds */
     }
     
     /* Make briefcase icon smaller on mobile */

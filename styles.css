@@ -478,6 +478,11 @@ section {
     transition: var(--transition);
 }
 
+/* Adjust object position for specific project image */
+#project-3-image {
+    object-position: center 80%; /* Adjust vertical position (e.g., 90% from the top) */
+}
+
 .project-card:hover .project-image img {
     transform: scale(1.1);
 }
@@ -517,6 +522,13 @@ section {
     background-color: var(--primary-color);
     color: var(--white-color);
     transform: translateY(-5px);
+}
+
+/* Style for disabled project links */
+.disabled-link {
+    pointer-events: none; /* Prevents click events */
+    cursor: default; /* Shows default cursor */
+    opacity: 0.6; /* Makes it look faded/disabled */
 }
 
 .project-info {
